@@ -10,6 +10,9 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.cskhw.study.R;
+import com.cskhw.study.viewpager.activitys.FragmentFirst;
+import com.cskhw.study.viewpager.activitys.FragmentSecond;
+import com.cskhw.study.viewpager.activitys.FragmentThird;
 
 public class ViewPagerActivity extends FragmentActivity {
 
@@ -17,13 +20,14 @@ public class ViewPagerActivity extends FragmentActivity {
     private static final int NUM_PAGES = 3;
 
     // 뷰페이저 객체
-    private ViewPager2 viewPager;
+    private static ViewPager2 viewPager;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.viewpager_main);
         viewPager = findViewById(R.id.viewPager);
+
         // 프래그먼트 상태 어뎁터 생성
         FragmentStateAdapter pagerAdapter = new ScreenSlidePagerAdapter(this);
         viewPager.setAdapter(pagerAdapter);
@@ -47,6 +51,8 @@ public class ViewPagerActivity extends FragmentActivity {
         @NonNull
         @Override
         public Fragment createFragment(int position) {
+            if (position == 1) return new FragmentSecond();
+            if (position == 2) return new FragmentThird();
             return new FragmentFirst();
         }
 
