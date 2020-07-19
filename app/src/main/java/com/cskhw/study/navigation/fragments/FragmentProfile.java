@@ -1,4 +1,4 @@
-package com.cskhw.study.viewpager.activitys;
+package com.cskhw.study.navigation.fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,12 +11,10 @@ import androidx.fragment.app.Fragment;
 
 import com.cskhw.study.R;
 
-
-public class FragmentFirst extends Fragment {
+public class FragmentProfile extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-
-        return (ViewGroup) inflater.inflate(R.layout.page_first, container, false);
+        return inflater.inflate(R.layout.fragment_profile, container, false);
     }
 }

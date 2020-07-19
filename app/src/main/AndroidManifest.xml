@@ -17,5 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".viewpager.ViewPagerActivity" />
+        <activity android:name=".navigation.BottomNavigationActivity" />
+        <activity android:name=".recycler.RecyclerActivity" />
     </application>
 </manifest>
